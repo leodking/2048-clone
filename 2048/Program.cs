@@ -34,7 +34,7 @@ namespace _2048
             Right,
         }
 
-        static int[] startPos = { 2, 1 };
+        static int[] startPos = { 10, 3 };
         static int TileWidth = 6;
 
         static Random rand = new Random();
@@ -375,10 +375,9 @@ namespace _2048
 
             score = 0;
 
-            // REVISIT - Can't set the Console window size for some reason
-            //int Width = startPos[0] + (board.GetLength(0) * TileWidth) + 3;
-            //int Height = startPos[1] + (board.GetLength(1) * 3) + 3;
-            //Console.SetWindowSize(Width, Height);
+            int Width = startPos[0] + (board.GetLength(0) * TileWidth) + 10;
+            int Height = startPos[1] + (board.GetLength(1) * 3) + 3;
+            Console.SetWindowSize(Width, Height);
 
             // Place 2 starting tiles
             PlaceNewTile(ref board);
